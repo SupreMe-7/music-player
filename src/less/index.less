@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    // font-size: 12px;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    padding-top: 40px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    .song-pic {
+        width: 50vw;
+        height: 50vw;
+        margin: 0 auto;
+        border-radius: 50%;
+        border: 20px solid #333;
+        animation: 6s linear infinite both;
+        &.rotate {
+            animation-name: rotate ;
+        }
+        .song-img {
+            width: 100%;
+            height: 100%;
+            img {
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+    }
+    .song-info {
+        width: 100%;
+        margin-top: 40px;
+        div {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .song-name h2 {
+            font-weight: 500;
+        }
+    }
+    .song-process {
+        width: 100%;
+        display: flex;
+        line-height: 40px;
+        color: #fff;
+        .cur-time{
+            width: 60px;
+            height: 40px;
+            text-align: center;
+        }
+        .process {
+            flex-grow: 1;
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+            .pro-bottom, .pro-up {
+                width: 100%;
+                height: 2px;
+                top: 50%;
+                margin-top: -1px;
+                position: absolute;
+            }
+            .pro-bottom {
+                background-color: rgba(255, 255, 255, 0.6);
+            }
+            .pro-up {
+                background-color: #fff;
+                transform: translateX(-100%);
+            }
+            .pro-spot {
+                width: 5px;
+                height: 5px;
+                position: absolute;
+                top: 50%;
+                margin-top: -2.5px; 
+                border-radius: 50%;
+                transform: translateX(0%);
+                background-color: #fff;
+            }
+        }
+        .all-time {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+        }
+    }
+    .song-control {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2);;
+        display: flex;
+        .item {
+            flex-grow: 1;
+            // border: 1px solid #999;
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            &.fav {
+                background-image: url('../img/icon-like.png');
+            }
+            &.fav.liking {
+                background-image: url('../img/icon-like-solid.png');
+            }
+            &.prev {
+                background-image: url('../img/icon-prev.png');
+            }
+            &.next {
+                background-image: url('../img/icon-next.png');
+            }
+            &.play {
+                background-image: url('../img/icon-play.png');
+            }
+            &.play.pause {
+                background-image: url('../img/icon-pause.png');
+            }
+            &.list {
+                background-image: url('../img/icon-list.png');
+            }
+            &.list.playlist {
+                background-image: url('../img/icon-playlist.png');
+            }
+        }
+        
+    }
+    .song-list {
+        position: absolute;
+        font-size: 18px;
+        background-color: rgb(243, 241, 241);
+        width: 100%;
+        height: 150px;
+        bottom: 60px;
+        display: none;
+        .song:nth-child(even) {
+            background-color: rgb(214, 206, 206);
+        }
+        .song:hover {
+            background-color: rgb(165, 157, 157);
+        }
+        .song {
+            display: flex;
+            .songName {
+                flex-grow: 5;
+            }
+            .songSinger {
+                flex-grow: 2;
+            }
+            .songTime {
+                flex-grow: 1;
+            }
+        }
+        
+    }
+}
+
